@@ -13,7 +13,7 @@ export class Automata {
   public comentario: string;
   public mensaje: string;
 
-  constructor(private verificadores: Verificadores, private servicioUnicode: ServicioUnicode){};
+  constructor(private verificadores: Verificadores){};
 
 	
 
@@ -52,7 +52,8 @@ export class Automata {
 			if (this.verificadores.verificaReservada(string)) {
 
         console.log("no es palabra reservada");
-        this.mensaje = this.verificadores.indentificadorValido(arreglo, 1);
+				this.mensaje = this.verificadores.indentificadorValido(arreglo, 1);
+				return;
 
 			} else {
 

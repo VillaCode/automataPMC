@@ -17,9 +17,9 @@ import { ServicioUnicode } from './Services/unicode';
   ],
   providers: [
 
-    Verificadores,
-    ServicioUnicode
-
+    ServicioUnicode,
+    Verificadores
+    
   ],
   bootstrap: [Automata]
 })

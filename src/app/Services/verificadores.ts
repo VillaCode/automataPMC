@@ -19,13 +19,13 @@ import { ServicioUnicode } from './unicode';
     
     private mensaje: string;
 
-    constructor(private servicioUnicode: ServicioUnicode){}
+    constructor(){}
 
 
 
     verificaPF(arreglo: string[], i: number) {
 		if (arreglo.length == i + 1) {
-			this.mensaje = ("No es un Punto Flotante valido, No puede haber cadena vacia despues del punto");
+			this.mensaje = ("Punto flotante error; cadena vacia después del punto");
 			return this.mensaje;
 		}
 
@@ -36,7 +36,7 @@ import { ServicioUnicode } from './unicode';
 			}
 		}
 
-		this.mensaje = ("No es punto flotante válido");
+		this.mensaje = ("Punto flotante error");
 		return this.mensaje;
 
 	}
@@ -44,40 +44,40 @@ import { ServicioUnicode } from './unicode';
 
 	verificarSiEsHexadecimal(arreglo: string[]) {
 		if (arreglo.length == 2) {
-			this.mensaje = ("No es un hexadecimal valido");
+			this.mensaje = ("Hexadecimal error");
 			return this.mensaje;
         }
         console.log('holacrayola');
 		for (let i = 2; i < arreglo.length; i++) {
 			if (ServicioUnicode.guionBajo(arreglo[i]) || ServicioUnicode.esPunto(arreglo[i])) {
-				this.mensaje = ("No es un hexadecimal valido");
+				this.mensaje = ("Hexadecimal error");
 				return this.mensaje;
 			} else if (!(ServicioUnicode.verificaAF(arreglo[i]) || ServicioUnicode.verifica09(arreglo[i]))) {
-				this.mensaje = ("No es un hexadecimal valido");
+				this.mensaje = ("Hexadecimal error");
 				return this.mensaje;
 			}
 		}
 
-		this.mensaje = ("Es un hexadecimal valido");
+		this.mensaje = ("Hexadecimal");
         return this.mensaje;
 	}
 
 	indentificadorValido(arreglo: any, i: number) {
 		for (let j = i; j < arreglo.length; j++) {
 			if (!(ServicioUnicode.verificaAZ(arreglo[j]) || ServicioUnicode.guionBajo(arreglo[j]) || ServicioUnicode.verifica09(arreglo[j]) )) {
-				this.mensaje = ("No es identificador Valido");
+				this.mensaje = ("Identificador Inválido");
 				return this.mensaje;
 			}
 		}
 		
-		this.mensaje = ("Es identificador valido");
+		this.mensaje = ("Identificador válido");
 		return this.mensaje;
     }
     
 
     verificaPF2(arreglo: string[], i: number) {
 		if (i + 1 == arreglo.length) {
-			this.mensaje = ("Es un Punto Flotante Valido");
+			this.mensaje = ("Es un punto flotante");
 			return this.mensaje;
 		}
 		let espf: boolean;
@@ -91,24 +91,24 @@ import { ServicioUnicode } from './unicode';
 				return this.mensaje;
 			}
 			if(espf==false) {
-				this.mensaje = ("Punto flotante no valido");
+				this.mensaje = ("punto flotante error");
 				return this.mensaje;
 			}
 		}
 		
-		this.mensaje = ("Punto Flotante Valido");
+		this.mensaje = ("punto flotante Valido");
 		return this.mensaje;
 
 	}
 
 	verificaPF3(arreglo: string[], j: number) {
 		if(j+1==arreglo.length) {
-			this.mensaje = ("Punto Flotante no válido por el exponente");
+			this.mensaje = ("punto flotante no válido por el exponente vacío");
 			return this.mensaje;
 		}
 		if(ServicioUnicode.esSigno(arreglo[j+1])) {
 			if(j+2==arreglo.length) {
-				this.mensaje = ("Punto flotante no válido por cadena incompleta");
+				this.mensaje = ("punto flotante no válido por cadena incompleta");
 				return this.mensaje;
 			}
 			this.verificaPF4(arreglo, j+2);
@@ -118,14 +118,14 @@ import { ServicioUnicode } from './unicode';
 			this.verificaPF4(arreglo, j+1);
 			return this.mensaje;
 		}
-		this.mensaje = ("punto FLOTANTE invalido");
+		this.mensaje = ("punto flotante error");
 		return this.mensaje;
 		
 	}
 
 	verificaPF4(arreglo: string[], j: number) {
 		if(j+1==arreglo.length) {
-			this.mensaje = ("Punto Flotante válido");
+			this.mensaje = ("punto flotante");
 			return this.mensaje;
 		}
 		let espf: boolean;
@@ -135,11 +135,11 @@ import { ServicioUnicode } from './unicode';
 				espf=true;
 			}
 			if(espf==false) {
-				this.mensaje = ("punto flotante INVALIDO");
+				this.mensaje = ("punto flotante error");
 				return this.mensaje;
 			}
 		}
-		this.mensaje = ("PUNTO FLOTANTE VALIDO");
+		this.mensaje = ("punto flotante");
 		return this.mensaje;
 		
 	}
