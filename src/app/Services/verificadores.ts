@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ServicioUnicode } from './unicode';
 
-@Component({})
+
   export class Verificadores {
 
     public keywords = { 

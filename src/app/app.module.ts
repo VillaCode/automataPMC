@@ -8,7 +8,8 @@ import { ServicioUnicode } from './Services/unicode';
 
 @NgModule({
   declarations: [
-    Automata
+    Automata,
+    
   ],
   imports: [
     BrowserModule,
