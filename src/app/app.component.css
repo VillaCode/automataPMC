@@ -1,0 +1,40 @@
+html body{
+    margin: 0%;
+    padding: 0%;
+}
+
+
+.display{
+    width: 60%;
+    margin-top: 10%;
+    color: rgb(255, 255, 255);
+    background: rgb(255, 255, 255);
+    display: inline-block;
+    padding: 0% 2%;
+    margin: 0%;
+    height: 70%;
+}
+
+.textarea{
+    width: 100%;
+    height: 100%;
+    background: black;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    font-size: 4rem
+}
+
+#wrapper{
+    width: 100%;
+    align-content: center;
+    margin: 0%;
+    padding: 0%;
+    text-align: center;
+}
+
+#magia{
+    width: 20%;
+    height: 15%;
+}
+
